@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       Gesmec - Atualizar Demanda
 // @namespace  http://www.mec.gov.br/
-// @version    0.1
+// @version    0.2
 // @description
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // @require     http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js
@@ -16,7 +16,6 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 
 function refreshBugPage(){
 	document.location.reload();
-	//$("frame[name='product']").contentDocument.location.reload();
 }
 
 var refreshButton=document.createElement("input");
@@ -28,4 +27,4 @@ refreshButton.onclick = refreshBugPage;
 $(document).ready(function()
 		{
 		    $('.tablecenter tbody', $("frame[name='product']").contentDocument).append($('<tr><td>').append($(refreshButton)));
-		});
+		});
